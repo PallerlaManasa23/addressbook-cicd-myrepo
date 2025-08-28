@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('github validation'){
           steps{
-                 git url: 'https://github.com/akshu20791/addressbook-cicd-project'
+                 git url: 'https://github.com/PallerlaManasa23/addressbook-cicd-myrepo.git'
           }
         }
         stage('compiling the code'){
@@ -28,7 +28,7 @@ pipeline{
         }
         stage("deploy the project on tomcat"){
             steps{
-                sh "sudo mv /var/lib/jenkins/workspace/pipeline/target/addressbook.war /home/ubuntu/apache-tomcat-8.5.100/webapps/"
+                sh 'ansible-playbook -i /etc/ansible/hosts deplo_tomcat.yml'
             }
         }
     }
