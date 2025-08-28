@@ -28,7 +28,7 @@ pipeline{
         }
         stage("deploy the project on tomcat"){
             steps{
-                sh 'ansible-playbook -i /etc/ansible/hosts deplo_tomcat.yml'
+                sh 'ansible-playbook -i /etc/ansible/hosts deploy_tomcat.yml'
             }
         }
     }
